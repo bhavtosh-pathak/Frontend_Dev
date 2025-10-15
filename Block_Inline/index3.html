@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration Form</title>
+</head>
+<body>
+
+  <header>
+    <h1>Course Registration Form</h1>
+    <p>Please fill in your details and select your preferred course.</p>
+  </header>
+
+  <hr>
+
+  <form>
+
+    <fieldset>
+      <legend>Student Information</legend>
+
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      <br><br>
+
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <br><br>
+
+      <label for="course">Select Course:</label><br>
+      <select id="course" name="course">
+        <option value="">-- Select a Course --</option>
+        <option value="html">HTML & Web Fundamentals</option>
+        <option value="css">CSS Styling & Design</option>
+        <option value="js">JavaScript Programming</option>
+        <option value="react">React.js Development</option>
+        <option value="python">Python for Beginners</option>
+      </select>
+      <br><br>
+
+      <input type="submit" value="Register">
+      <input type="reset" value="Clear Form">
+
+    </fieldset>
+  </form>
+
+  <hr>
+
+  <section>
+    <h2>Available Course Schedules</h2>
+    <table border="1" cellspacing="0" cellpadding="8" width="80%">
+      <tr>
+        <th>Course</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Instructor</th>
+      </tr>
+      <tr>
+        <td>HTML & Web Fundamentals</td>
+        <td>Monday, Wednesday</td>
+        <td>10:00 AM - 11:30 AM</td>
+        <td>Pathak</td>
+      </tr>
+      <tr>
+        <td>CSS Styling & Design</td>
+        <td>Tuesday, Thursday</td>
+        <td>12:00 PM - 1:30 PM</td>
+        <td>Ms. Gupta</td>
+      </tr>
+      <tr>
+        <td>JavaScript Programming</td>
+        <td>Monday, Friday</td>
+        <td>2:00 PM - 3:30 PM</td>
+        <td>Mr. Mehta</td>
+      </tr>
+      <tr>
+        <td>React.js Development</td>
+        <td>Saturday</td>
+        <td>10:00 AM - 1:00 PM</td>
+        <td>Ms. Singh</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2025 Web Academy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
