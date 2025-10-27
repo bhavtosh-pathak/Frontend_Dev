@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+header {
+  background: #2e2e2e;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  margin: 0 1em;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4em 2em;
+  border-bottom: 2px solid #ccc;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+section p {
+  font-size: 1.1em;
+  max-width: 800px;
+}
+
+
+.parallax {
+  background-image: url('kyoto-temple.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+}
+
+.parallax-food {
+  background-image: url('kyoto-food.jpg');
+}
+
+
+.gradient-linear {
+  background: linear-gradient(to right, #f9c5d1, #9795ef);
+  color: #222;
+}
+
+
+.gradient-radial {
+  background: radial-gradient(circle at center, #c1dfc4, #deecdd);
+}
+
+
+.visit {
+  background-color: #fafafa;
+}
+
+
+footer {
+  background: #2e2e2e;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+  font-size: 0.9rem;
+}
