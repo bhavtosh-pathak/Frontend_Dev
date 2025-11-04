@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+    <p>Explore how different types of selectors work in CSS.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Element Selector Example</h2>
+      <p>This paragraph is styled using the element selector for all &lt;p&gt; tags.</p>
+      <p>Another paragraph to demonstrate consistent styling.</p>
+    </section>
+
+    <section>
+      <h2>Class Selector Example</h2>
+      <p class="highlight">This text uses a class selector to change color and background.</p>
+      <p class="highlight">Another example with the same class.</p>
+    </section>
+
+    <section>
+      <h2>ID Selector Example</h2>
+      <p id="unique">This paragraph is styled using an ID selector.</p>
+    </section>
+
+    <section>
+      <h2>Attribute Selector Example</h2>
+      <a href="#" title="home">Home Link</a>
+      <a href="#" title="about">About Link</a>
+      <a href="#" target="_blank">Opens in new tab</a>
+    </section>
+
+    <section>
+      <h2>Combinators Example</h2>
+      <div class="combinator-demo">
+        <p>Direct child paragraph inside div (styled using >).</p>
+        <p>Another direct child paragraph.</p>
+        <span>Sibling Example:</span>
+        <p>Paragraph immediately after span (+ selector).</p>
+        <p>Paragraph following another paragraph (~ selector).</p>
+        <div>
+          <p>Nested paragraph (descendant selector).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSS Practice Page. Designed for learning CSS selectors.</p>
+  </footer>
+</body>
+</html>
