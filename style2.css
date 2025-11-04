@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.box1 {
+  background: tomato;
+  width: 200px;
+  min-height: 150px;
+}
+
+.box2 {
+  background: steelblue;
+  width: 30%;
+  max-width: 250px;
+  height: 120px;
+}
+
+.box3 {
+  background: seagreen;
+  width: 20vw;
+  height: 10em;
+  overflow: auto;
+}
