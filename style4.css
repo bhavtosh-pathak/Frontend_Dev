@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background: #ffefc2;
+  color: #b45f06;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#unique {
+  background: #cce5ff;
+  color: #004085;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+a[title] {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+a[target="_blank"] {
+  color: #28a745;
+}
+
+a[title]:hover, a[target="_blank"]:hover {
+  text-decoration: underline;
+}
+
+.combinator-demo > p {
+  background: #d1ecf1;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.combinator-demo span + p {
+  background: #f8d7da;
+}
+
+.combinator-demo p ~ p {
+  border-left: 4px solid #6c757d;
+  padding-left: 8px;
+}
+
+.combinator-demo div p {
+  font-style: italic;
+  color: #6f42c1;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
