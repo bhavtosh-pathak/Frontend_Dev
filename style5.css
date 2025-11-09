@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: #f5f7fa;
+  text-align: center;
+  color: #333;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+h1 {
+  margin-bottom: 40px;
+  color: #004aad;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Individual Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 1.5s ease both;
+}
+
+/* Card Image with Filter */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+/* Card Content */
+.card h2 {
+  margin: 15px 0 10px;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.card p {
+  font-size: 0.95rem;
+  padding: 0 15px 20px;
+  color: #555;
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img {
+  filter: none;
+}
+
+/* Fade-in Keyframe Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout: Stack vertically below 800px */
+@media (max-width: 800px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
