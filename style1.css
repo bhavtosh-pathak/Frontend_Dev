@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Gallery Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Image + Caption */
+.img-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.img-item:hover {
+  transform: translateY(-5px);
+}
+
+.img-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.5s ease;
+}
+
+/* Caption */
+figcaption {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Filter Effects */
+.blur img {
+  filter: blur(4px);
+}
+
+.grayscale img {
+  filter: grayscale(100%);
+}
+
+.sepia img {
+  filter: sepia(100%);
+}
+
+.brightness img {
+  filter: brightness(70%);
+}
+
+.contrast img {
+  filter: contrast(200%);
+}
+
+.hue img {
+  filter: hue-rotate(120deg);
+}
+
+/* Hover Effect - Remove Filter */
+.img-item:hover img {
+  filter: none;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
