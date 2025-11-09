@@ -1,0 +1,45 @@
+/* Base Page Styles */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafc;
+  color: #333;
+}
+
+/* Typography Section */
+.text-section {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Font Sizes using clamp() */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 20px;
+  color: #004aad;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Readability adjustments for smaller screens */
+@media (max-width: 700px) {
+  .text-section {
+    margin: 60px 15px;
+    padding: 30px 15px;
+  }
+
+  p {
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+}
