@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q6 — Event Subscription Panel</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>.topic{padding:6px;border:1px solid #ccc;margin:4px;display:inline-block;cursor:pointer}</style>
+</head>
+<body>
+  <button id="sub">Subscribe</button>
+  <button id="unsub">Unsubscribe</button>
+  <button id="addTopic">Add Topic</button>
+  <div id="topics"></div>
+  <div id="messages"></div>
+
+  <script>
+
+    let subscribed = false;
+    $('#sub').on('click', function(){
+      subscribed = true;
+      $('<div class="success">Subscribed to notifications</div>').appendTo('#messages').fadeOut(2500, function(){ $(this).remove(); });
+    });
+    $('#unsub').on('click', function(){
+      subscribed = false;
+      $('<div class="success">Unsubscribed from notifications</div>').appendTo('#messages').fadeOut(2500, function(){ $(this).remove(); });
+    });
+
+  
+    $('#addTopic').on('click', function(){
+      const t = $('<div class="topic">Topic ' + ($('.topic').length + 1) + '</div>');
+      $('#topics').append(t);
+      // attach click handler directly
+      t.on('click', function(){ alert($(this).text() + ' clicked'); });
+    });
+
+  
+    $('#topics').on('dblclick', '.topic', function(){
+      $(this).off('click');
+      $(this).css('opacity',0.5).append(' (events removed)');
+    });
+  </script>
+</body>
+</html>
