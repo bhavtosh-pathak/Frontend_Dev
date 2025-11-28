@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q4 — Special Offer Banner</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>.banner{padding:10px;margin:6px;background:#ffdead;width:90%}</style>
+</head>
+<body>
+  <div id="banners">
+    <div class="banner" id="b1">Special Offer 1</div>
+    <div class="banner" id="b2">Special Offer 2</div>
+    <div class="banner" id="b3">Special Offer 3</div>
+  </div>
+
+  <button id="hideBtn">Hide</button>
+  <button id="showBtn">Show</button>
+  <button id="slideBtn">Slide Toggle</button>
+  <button id="fadeBtn">Fade Toggle</button>
+
+  <script>
+    $('#hideBtn').on('click', ()=> $('.banner').hide());
+    $('#showBtn').on('click', ()=> $('.banner').show());
+    $('#slideBtn').on('click', ()=> $('.banner').slideToggle(250));
+    $('#fadeBtn').on('click', ()=> $('.banner').fadeToggle(250));
+
+    let banners = $('.banner'), idx = 0;
+    banners.hide(); $(banners[0]).show();
+    setInterval(()=>{
+      $(banners[idx]).fadeOut(400, ()=>{
+        idx = (idx + 1) % banners.length;
+        $(banners[idx]).fadeIn(400);
+      });
+    }, 5000);
+  </script>
+</body>
+</html>
