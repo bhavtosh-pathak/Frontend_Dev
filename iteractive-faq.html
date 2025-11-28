@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q3 — Interactive FAQ</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>.answer{display:none}.question{cursor:pointer;padding:6px}.highlight{background:#fff3b0}</style>
+</head>
+<body>
+  <div class="qa">
+    <div class="question">What is jQuery?</div>
+    <div class="answer">jQuery is a JS library that simplifies DOM manipulation.</div>
+    <input class="ans-input" placeholder="Comments...">
+  </div>
+
+  <div class="qa">
+    <div class="question">What is AJAX?</div>
+    <div class="answer">AJAX enables asynchronous HTTP requests from the browser.</div>
+    <input class="ans-input" placeholder="Comments...">
+  </div>
+
+  <script>
+
+    $('.question').on('click', function(){ $(this).next('.answer').slideToggle(150); });
+
+    
+    $('.question').hover(
+      function(){ $(this).css('color','blue'); },
+      function(){ $(this).css('color',''); }
+    );
+
+  
+    $('.question').on('dblclick', function(){ $('.answer').slideUp(150); });
+
+   
+    $('.ans-input').on('focus', function(){
+      $(this).siblings('.question').addClass('highlight');
+    }).on('blur', function(){
+      $(this).siblings('.question').removeClass('highlight');
+    });
+  </script>
+</body>
+</html>
