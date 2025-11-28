@@ -1,0 +1,23 @@
+{
+  "users": [
+    { "id": 1, "name": "Rohan" },
+    { "id": 2, "name": "Meera" },
+    { "id": 3, "name": "Sahil" },
+    { "id": 4, "name": "Anita" },
+    { "id": 5, "name": "Karan" }
+  ],
+  "orders": [
+    { "id": 1, "userId": 1, "total": 1200 },
+    { "id": 2, "userId": 3, "total": 499 },
+    { "id": 3, "userId": 2, "total": 2599 },
+    { "id": 4, "userId": 5, "total": 899 },
+    { "id": 5, "userId": 4, "total": 150 }
+  ],
+  "products": [
+    { "id": 1, "name": "Mug", "price": 199 },
+    { "id": 2, "name": "Notebook", "price": 99 },
+    { "id": 3, "name": "Backpack", "price": 1299 },
+    { "id": 4, "name": "Headphones", "price": 2499 },
+    { "id": 5, "name": "Mouse", "price": 799 }
+  ]
+}
