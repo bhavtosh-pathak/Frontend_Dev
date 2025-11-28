@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q1 Live Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body{font-family: Arial; padding:20px}
+    #results img{width:80px;height:80px;object-fit:cover;margin-right:10px}
+    .row{display:flex;align-items:center;padding:8px;border-bottom:1px solid #eee}
+    .loading{font-style:italic;color:#666}
+    .empty{color:#b00}
+  </style>
+</head>
+<body>
+  <h2>Live Product Search</h2>
+  <input id="search" placeholder="Type product name..." autocomplete="off">
+  <div id="status"></div>
+  <div id="results"></div>
+
+  <script>
+    $(function(){
+      var $input = $('#search');
+      var $results = $('#results');
+      var $status = $('#status');
+      var currentRequest = null;
+
+      $input.on('input', function(){
+        var q = $(this).val().trim();
+        $results.empty();
+        if (currentRequest) {
+          currentRequest.abort();
+          currentRequest = null;
+        }
+        $status.text(''); 
+        if (q === '') return;
+
+        $status.html('<span class="loading">Loading...</span>');
+        currentRequest = $.ajax({
+          url: 'http://localhost:3001/products',
+          data: { q: q },
+          method: 'GET',
+          success: function(data){
+            $status.text('');
+            if (!data || data.length === 0) {
+              $results.html('<div class="empty">No products found</div>');
+              return;
+            }
+            var html = '';
+            data.forEach(function(p){
+              html += '<div class="row"><img src="'+p.image+'"><div><strong>'+p.name+'</strong><div>₹'+p.price+'</div></div></div>';
+            });
+            $results.html(html);
+          },
+          error: function(xhr, status, err){
+            if (status !== 'abort') {
+              $status.html('<span style="color:red">Error loading results</span>');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
