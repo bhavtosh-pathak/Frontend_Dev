@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q2 — Product Highlight</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .product{border:1px solid #ccc;padding:8px;margin:6px;display:inline-block;width:180px;vertical-align:top;position:relative}
+    .highlight{background:#fffbcc}
+    .extra{display:none;font-size:0.9em;color:#333;margin-top:6px}
+    .fav.selected{color:crimson}
+    [data-discount="true"]{box-shadow:0 0 0 3px rgba(0,128,0,0.06)}
+    .out{opacity:0.5}
+    .fav{cursor:pointer;float:right}
+  </style>
+</head>
+<body>
+  <div class="product" data-stock="0" data-discount="true">
+    <span class="fav">★</span><strong>Prod A</strong>
+    <div class="price">₹199</div>
+    <div class="extra">10% off — limited!</div>
+  </div>
+
+  <div class="product" data-stock="5">
+    <span class="fav">★</span><strong>Prod B</strong>
+    <div class="price">₹399</div>
+    <div class="extra">New colors available</div>
+  </div>
+
+  <script>
+
+    $('.product').on('click', function(e){
+      if($(e.target).hasClass('fav')) return; 
+      $(this).toggleClass('highlight');
+      if( Number($(this).attr('data-stock')) === 0 ){
+        alert('This product is out of stock.');
+      }
+    });
+
+    $('.product').hover(
+      function(){ $(this).find('.extra').show(); },
+      function(){ $(this).find('.extra').hide(); }
+    );
+
+   
+    $('.fav').on('click', function(e){
+      e.stopPropagation();
+      $(this).toggleClass('selected');
+    });
+
+    
+    $('.product[data-stock="0"]').addClass('out');
+  </script>
+</body>
+</html>
