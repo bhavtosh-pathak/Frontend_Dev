@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q5 — Team Directory</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>.employee{padding:6px;border:1px solid #ddd;margin:4px}.highlight{background:#dff0d8}</style>
+</head>
+<body>
+  <div class="department" id="engineering">
+    <h3 class="dept-title">Engineering (click title to toggle members)</h3>
+    <div class="manager employee">Alice (Manager)</div>
+    <div class="employee">Bob <span class="contact" style="display:none"> — bob@example.com</span></div>
+    <div class="employee">Carol <span class="contact" style="display:none"> — carol@example.com</span></div>
+  </div>
+
+  <button id="rand">Highlight siblings of random employee</button>
+
+  <script>
+    $('.manager').on('click', function(){
+      $(this).nextAll('.employee').not('.manager').slice(0, 10).addClass('highlight'); 
+    });
+
+    
+    $('.employee').hover(
+      function(){ $(this).find('.contact').show(); },
+      function(){ $(this).find('.contact').hide(); }
+    );
+
+
+    $('.dept-title').on('click', function(){
+      $(this).parent().children('.employee').css('background','#eef7ff');
+    });
+
+    
+    $('#rand').on('click', function(){
+      const all = $('.employee');
+      const rand = all.eq(Math.floor(Math.random() * all.length));
+      rand.siblings('.employee').addClass('highlight');
+    });
+
+   
+    $('.dept-title').on('dblclick', function(){
+      $(this).parent().find('.employee').toggle();
+    });
+  </script>
+</body>
+</html>
