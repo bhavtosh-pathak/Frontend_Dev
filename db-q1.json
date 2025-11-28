@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Classic T-Shirt", "price": 399, "image": "https://via.placeholder.com/80?text=T1" },
+    { "id": 2, "name": "Blue Jeans", "price": 1199, "image": "https://via.placeholder.com/80?text=J1" },
+    { "id": 3, "name": "Running Shoes", "price": 2499, "image": "https://via.placeholder.com/80?text=S1" },
+    { "id": 4, "name": "Leather Jacket", "price": 4999, "image": "https://via.placeholder.com/80?text=LJ" },
+    { "id": 5, "name": "Baseball Cap", "price": 299, "image": "https://via.placeholder.com/80?text=Cap" }
+  ]
+}
